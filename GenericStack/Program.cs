@@ -1,4 +1,25 @@
 using System;
 
-// README.md를 읽고 아래에 코드를 작성하세요.
-Console.WriteLine("코드를 작성하세요.");
+Console.WriteLine("=== int 큐 (용량: 3) ===");
+SimpleQueue<int> intqueue = new SimpleQueue<int>(3);
+intqueue.Enqueue(10);
+intqueue.Enqueue(20);
+intqueue.Enqueue(30);
+intqueue.PrintAll();
+Console.WriteLine($"Count: {intqueue._Count}, IsFull: {intqueue.IsFull()}");
+intqueue.Enqueue(40);
+Console.WriteLine($"Peek: {intqueue.Peek()}");
+Console.WriteLine($"Dequeue: {intqueue.Dequeue()}");
+Console.WriteLine($"Dequeue: {intqueue.Dequeue()}");
+Console.WriteLine($"Count: {intqueue._Count}, IsEmpth: {intqueue.IsEmpty()}");
+Console.WriteLine();
+Console.WriteLine("=== string 큐 (용량: 2) ===");
+SimpleQueue<string> stringqueue = new SimpleQueue<string>(2);
+stringqueue.Enqueue("Hello");
+stringqueue.Enqueue("World");
+stringqueue.PrintAll();
+Console.WriteLine($"Dequeue: {stringqueue.Dequeue()}");
+Console.WriteLine($"Dequeue: {stringqueue.Dequeue()}");
+stringqueue.Dequeue();
+Console.WriteLine($"Dequeue: {stringqueue.Peek()}");
+Console.WriteLine($"IsEmpty: {stringqueue.IsEmpty()}");
